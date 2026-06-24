@@ -1,0 +1,16 @@
+# KDS tunables — edit and rerun, no code changes needed.
+# Environment variables (and secret.txt) still override these at runtime.
+
+[llm]
+provider = "groq"            # groq | together
+# model = "llama-3.3-70b-versatile"   # uncomment to override the provider default
+temperature = 0.7
+max_tokens = 1024
+
+[asr]
+backend = "groq_whisper"     # groq_whisper | collaborator
+
+[motion]
+n_fewshots = 4               # class-balanced examples drawn from the corpus
+fewshot_min_confidence = "high"   # high | medium | low
+news_count = 8               # recent headlines pulled when a theme/--news is set

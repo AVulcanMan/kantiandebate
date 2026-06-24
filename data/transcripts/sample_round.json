@@ -1,0 +1,59 @@
+{
+  "source": "mock://sample_round",
+  "metadata": {
+    "title": "Sample Parliamentary Debate Round — Renewable Energy",
+    "channel": "KDS Mock",
+    "duration_seconds": 47.5
+  },
+  "segments": [
+    {
+      "text": "The government side contends that renewable energy subsidies are essential to combating climate change.",
+      "start": 0.0,
+      "end": 5.8,
+      "speaker": "GOV1",
+      "confidence": 0.97
+    },
+    {
+      "text": "Fossil fuels currently account for over 80 percent of global energy supply, and without policy intervention that share will not fall fast enough.",
+      "start": 5.9,
+      "end": 12.4,
+      "speaker": "GOV1",
+      "confidence": 0.95
+    },
+    {
+      "text": "Therefore, direct subsidies to solar and wind producers create the price signal that private markets have failed to provide.",
+      "start": 12.5,
+      "end": 18.7,
+      "speaker": "GOV1",
+      "confidence": 0.96
+    },
+    {
+      "text": "The opposition disagrees. Subsidies distort market competition and prop up inefficient producers at taxpayer expense.",
+      "start": 20.1,
+      "end": 26.3,
+      "speaker": "OPP1",
+      "confidence": 0.93
+    },
+    {
+      "text": "The evidence shows that renewable costs have dropped 90 percent in a decade without sustained subsidy — the market is already working.",
+      "start": 26.4,
+      "end": 33.0,
+      "speaker": "OPP1",
+      "confidence": 0.91
+    },
+    {
+      "text": "Government intervention at this stage risks locking in today's technology and crowding out the breakthrough innovations we actually need.",
+      "start": 33.1,
+      "end": 39.8,
+      "speaker": "OPP1",
+      "confidence": 0.94
+    },
+    {
+      "text": "A point of information: does the opposition accept that without a carbon price, the externality remains unpriced regardless of cost curves?",
+      "start": 40.0,
+      "end": 46.2,
+      "speaker": "GOV2",
+      "confidence": 0.89
+    }
+  ]
+}

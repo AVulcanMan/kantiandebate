@@ -1,0 +1,29 @@
+# Secrets — never commit
+secret.txt
+.env
+
+# Generated artifacts
+data/corpus.sqlite
+data/footage/
+data/news_cache/
+logs/
+*.jsonl
+
+# Generated transcripts (keep the committed sample)
+data/transcripts/*.json
+!data/transcripts/sample_round.json
+
+# Downloaded caselist evidence
+kritiks/
+downloads/
+*.docx
+
+# Personal scratch
+yt_links
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/

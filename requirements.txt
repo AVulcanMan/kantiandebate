@@ -1,0 +1,17 @@
+# Core (Phase 0)
+pandas>=2.0
+pydantic>=2.0
+
+# LLM access (needed for live calls / Phase A+); import is lazy so Phase 0
+# corpus/schema work runs without it.
+openai>=1.0
+
+# Footage pipeline (Phase A)
+yt-dlp>=2024.0
+
+# Dev / test
+pytest>=7.0
+
+# Optional: load secret.txt-style env files. KDS also has a built-in loader,
+# so python-dotenv is not strictly required.
+# python-dotenv>=1.0

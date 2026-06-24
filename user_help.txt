@@ -1,0 +1,43 @@
+KDS — help needed from you (Yashas)
+====================================
+Written: 2026-06-23. Phase 0 (foundations) is built and validated WITHOUT any
+live LLM calls. To go further (Phase A: the core YouTube -> drill pipeline) I'll
+need credentials/access. Nothing below blocks Phase 0; it blocks Step 5 onward.
+
+WHAT I NEED
+-----------
+1. LLM API key (pick one to start; both work — the client is provider-agnostic):
+   - GROQ_API_KEY   (default provider; free tier is plenty at dev volume)
+   - TOGETHER_API_KEY (fallback)
+   Put it in the environment OR add a line to secret.txt (untracked), e.g.:
+       GROQ_API_KEY=gsk_xxx
+   I will NOT read or print secret.txt contents.
+
+2. Confirm the default model is fine, or override:
+   - groq default:     llama-3.3-70b-versatile
+   - together default: meta-llama/Llama-3.3-70B-Instruct-Turbo
+   Override via KDS_MODEL=... if you prefer something else.
+
+3. ASR (speech-to-text) decision for Step 5:
+   - Default I assumed: Groq Whisper (hosted) so we're not blocked on the GPU fleet.
+   - If your collaborator's transcription tooling is ready, point me at it (input
+     format + how to invoke) and I'll wire KDS_ASR_BACKEND=collaborator instead.
+     It just has to emit the JSON in data/transcripts/SCHEMA.md.
+
+4. A real debate YouTube URL (Parli or Congress) to use as the Checkpoint A
+   GO/NO-GO demo for the core pipeline.
+
+HOW TO VERIFY I'M UNBLOCKED
+---------------------------
+Once a key is set, this should print a real completion (not [DRY_RUN]):
+    python3 -c "from kds.llm.client import LLMClient; print(LLMClient().chat('You are terse.','Say hi in 3 words.',generator='smoke'))"
+
+WHAT I DID INSTEAD WHILE WAITING
+--------------------------------
+Built and tested all of Phase 0 that needs no tokens:
+  - taxonomy, corpus ingest (9,622 unique resolutions in data/corpus.sqlite),
+    class-balanced sampler, schemas, transcript loader, provider-agnostic LLM
+    client (with offline dry_run mode), and generation logging.
+  - 21 passing tests; classifier refactor matches stored labels 99.99%.
+Next up once unblocked: Step 4 (yt-dlp youtube ingest) -> Step 5 (transcribe)
+-> Step 6 (argument segmentation) -> Step 7 (refutation drill).
